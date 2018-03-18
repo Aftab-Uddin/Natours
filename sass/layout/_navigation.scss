@@ -24,20 +24,31 @@
     &__input:checked ~ &__nav{  
         left: 50%;
         opacity: 1;
-        visibility: visible;
+        visibility: visible; 
     }
 
     &__label {
-        height:7rem ;
+
+        height: 7rem;
         width: 7rem;
-        border-radius: 100rem;
-        box-shadow: 0 0 2rem rgba($color-black, .2);
-        background: $color-white; 
         position: fixed;
         top: 6rem;
         right: 6rem;
+        border-radius: 50%;
+        box-shadow: 0 0 2rem rgba($color-black, .2);
+        background: $color-white; 
         z-index: 300;
         cursor: pointer;
+
+        @include respond(tab) {
+            top: 4rem;
+            right: 4rem;
+        }
+
+        @include respond(phone) {
+            top: 3rem;
+            right: 3rem;
+        }
     }
     &__label:hover > &__btn {
 
@@ -57,7 +68,7 @@
         &::after {
             display: inline-block;
             height: 2px;
-            width: 3.3rem;
+            width: 3rem;
             background: $color-black;
             position: absolute;  
         }
@@ -66,26 +77,73 @@
             content: "";
             left: 0;
             transition: $point-two;
+
+            @include respond (phone) {
+                top: -7px;
+            }
         }
         &::before{
             top: -.8rem;
+
+            @include respond (phone) {
+                top: -6px;
+            }
         }
         &::after{
             top: .8rem;
+
+            @include respond (phone) {
+                top: 6px;
+            }
         }
     }
 
+    //   &__icon {
+    //     position: relative;
+    //     margin-top: 3.5rem;
+
+    //     &,
+    //     &::before,
+    //     &::after {
+    //         width: 3rem;
+    //         height: 2px;
+    //         background-color: $color-grey-dark-3;
+    //         display: inline-block;
+    //     }
+
+    //     &::before,
+    //     &::after {
+    //         content: "";
+    //         position: absolute;
+    //         left: 0;
+    //         transition: all .2s;
+    //     }
+
+    //     &::before { top: -.8rem; }
+    //     &::after { top: .8rem; }
+    // }
+
     &__background {
-        height:6.5rem;
-        width: 6.5rem;
-        border-radius: 100rem;
+        height: 6rem;
+        width: 6rem;
+        border-radius: 50%;
+        top: 6.5rem;
+        right: 6.5rem;
         background-image: radial-gradient( $color-primary-light, $color-primary-dark);
         position: fixed;
-        top: 6.2rem;
-        right:6.2rem;
         z-index: 100;
-        transform: scale(1);
+        transform: scale(1); 
         transition: $point-five;
+
+        @include respond(tab) {
+            top: 4.5rem;
+            right: 4.5rem;
+        }
+
+        @include respond(phone) { 
+            top: 3.5rem;
+            right: 3.5rem;
+        }
     }
 
     &__nav { 
@@ -95,17 +153,21 @@
         transform: translate(-50%, -50%);
         z-index: 200; 
         opacity: 0;
+        width: 100%;
         visibility: hidden;
-        transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        transition: left .8s cubic-bezier(0.68, -0.55, 0.265, 1.55), 
+            opacity  .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         
     }
-
+ 
     &__nav-list {
         list-style: none; 
+        
     }
 
     &__nav-item {
         text-align: center;
+        width: 100%;
     }
     &__nav-link {
         display: inline-block;

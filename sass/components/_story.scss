@@ -37,6 +37,7 @@
         width: 15rem;
         float: left;
         border-radius: 100rem;
+        overflow: hidden;
         margin-right: 3rem;
         position: relative;
 
@@ -56,10 +57,16 @@
 
     &__img { 
         height: 100%;
-        transform: translate(-3.5rem, 0)scale(1.4);
+        transform: translate(-01.3rem, 0)scale(1.3);
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
         transition: $point-four;
+
+        @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+            transform: translate(-3.5rem, 0)scale(1.4);
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
     }
 
     &__caption {
@@ -80,8 +87,15 @@
     }
 
     &__content:hover .story__img {
+        -webkit-filter: blur(2px) brightness(80%); 
         filter: blur(2px) brightness(80%); 
-        transform: translate(-3.5rem, 0) scale(1);   
+        transform: translate(-01.9rem, 0)scale(1);
+
+        @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+            transform: translate(-3.5rem, 0)scale(1);
+            filter: blur(2px) brightness(80%); 
+         
+        }  
     }
     &__content:hover .story__caption {
         top: 50%;

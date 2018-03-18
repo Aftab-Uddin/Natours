@@ -74,7 +74,7 @@ body {
     font-weight: 400;
     text-align: center;
     letter-spacing: 3.4rem;
-    animation: MoveInLeft 1s; }
+    animation: MoveInLeft 1.5s; }
     @media only screen and (max-width: 37.5em) {
       .heading-primary--main {
         letter-spacing: 1rem;
@@ -84,7 +84,7 @@ body {
     font-size: 2rem;
     font-weight: 700;
     letter-spacing: 1.7rem;
-    animation: MoveInRight 1s; }
+    animation: MoveInRight 1.5s; }
     @media only screen and (max-width: 37.5em) {
       .heading-primary--sub {
         letter-spacing: .2rem;
@@ -201,8 +201,10 @@ body {
   position: absolute;
   border-radius: 4px;
   overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   box-shadow: 0 1.5rem 2.5rem rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease-in-out; }
+  transition: all .3s; }
   .about__img--1 {
     top: 0;
     left: 0; }
@@ -221,10 +223,14 @@ body {
         left: 8rem; } }
   .about__img:hover {
     outline: 1.5rem solid #55c57a;
-    outline-offset: 2rem;
     transform: translate(0, 0.3px) scale(1.1);
     box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.3);
-    z-index: 10; }
+    z-index: 10;
+    padding: 2rem; }
+    @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+      .about__img:hover {
+        outline-offset: 2rem;
+        padding: 0; } }
 
 @media only screen and (max-width: 56.25em) {
   .about__img {
@@ -514,7 +520,8 @@ body {
     padding: 1.5rem;
     outline: none;
     border: none;
-    color: inherit;
+    color: #999;
+    font-size: 1.5rem;
     border-radius: 3px;
     width: 90%;
     border-bottom: 3px solid transparent; }
@@ -524,8 +531,7 @@ body {
       .form__input:focus:invalid {
         border-bottom: 3px solid #ff7730; }
     .form__input::-webkit-input-placeholder {
-      color: #777;
-      font-weight: 700; }
+      color: #999; }
     @media only screen and (max-width: 56.25em) {
       .form__input {
         width: 100%; } }
@@ -614,6 +620,7 @@ body {
     width: 15rem;
     float: left;
     border-radius: 100rem;
+    overflow: hidden;
     margin-right: 3rem;
     position: relative; }
     @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
@@ -628,10 +635,15 @@ body {
         margin-right: 1.5rem; } }
   .story__img {
     height: 100%;
-    transform: translate(-3.5rem, 0) scale(1.4);
+    transform: translate(-1.3rem, 0) scale(1.3);
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     transition: all 0.4s ease-in-out; }
+    @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+      .story__img {
+        transform: translate(-3.5rem, 0) scale(1.4);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden; } }
   .story__caption {
     position: absolute;
     top: 100%;
@@ -646,8 +658,13 @@ body {
   .story__text {
     line-height: 1.6; }
   .story__content:hover .story__img {
+    -webkit-filter: blur(2px) brightness(80%);
     filter: blur(2px) brightness(80%);
-    transform: translate(-3.5rem, 0) scale(1); }
+    transform: translate(-1.9rem, 0) scale(1); }
+    @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+      .story__content:hover .story__img {
+        transform: translate(-3.5rem, 0) scale(1);
+        filter: blur(2px) brightness(80%); } }
   .story__content:hover .story__caption {
     top: 50%;
     opacity: 1;
@@ -849,14 +866,22 @@ body {
 .navigation__label {
   height: 7rem;
   width: 7rem;
-  border-radius: 100rem;
-  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.2);
-  background: #fff;
   position: fixed;
   top: 6rem;
   right: 6rem;
+  border-radius: 50%;
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.2);
+  background: #fff;
   z-index: 300;
   cursor: pointer; }
+  @media only screen and (max-width: 56.25em) {
+    .navigation__label {
+      top: 4rem;
+      right: 4rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .navigation__label {
+      top: 3rem;
+      right: 3rem; } }
 
 .navigation__label:hover > .navigation__btn::before {
   top: -1.1rem; }
@@ -871,29 +896,46 @@ body {
   .navigation__btn, .navigation__btn::before, .navigation__btn::after {
     display: inline-block;
     height: 2px;
-    width: 3.3rem;
+    width: 3rem;
     background: #000;
     position: absolute; }
   .navigation__btn::before, .navigation__btn::after {
     content: "";
     left: 0;
     transition: all 0.2s ease-in-out; }
+    @media only screen and (max-width: 37.5em) {
+      .navigation__btn::before, .navigation__btn::after {
+        top: -7px; } }
   .navigation__btn::before {
     top: -.8rem; }
+    @media only screen and (max-width: 37.5em) {
+      .navigation__btn::before {
+        top: -6px; } }
   .navigation__btn::after {
     top: .8rem; }
+    @media only screen and (max-width: 37.5em) {
+      .navigation__btn::after {
+        top: 6px; } }
 
 .navigation__background {
-  height: 6.5rem;
-  width: 6.5rem;
-  border-radius: 100rem;
+  height: 6rem;
+  width: 6rem;
+  border-radius: 50%;
+  top: 6.5rem;
+  right: 6.5rem;
   background-image: radial-gradient(#7ed56f, #28b485);
   position: fixed;
-  top: 6.2rem;
-  right: 6.2rem;
   z-index: 100;
   transform: scale(1);
   transition: all 0.5s ease-in-out; }
+  @media only screen and (max-width: 56.25em) {
+    .navigation__background {
+      top: 4.5rem;
+      right: 4.5rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .navigation__background {
+      top: 3.5rem;
+      right: 3.5rem; } }
 
 .navigation__nav {
   position: fixed;
@@ -902,14 +944,16 @@ body {
   transform: translate(-50%, -50%);
   z-index: 200;
   opacity: 0;
+  width: 100%;
   visibility: hidden;
-  transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+  transition: left 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
 
 .navigation__nav-list {
   list-style: none; }
 
 .navigation__nav-item {
-  text-align: center; }
+  text-align: center;
+  width: 100%; }
 
 .navigation__nav-link {
   display: inline-block;
@@ -940,7 +984,7 @@ body {
   z-index: 500;
   opacity: 0;
   visibility: hidden;
-  transition: all .3s  ease-in-out; }
+  transition: opacity .3s  ease-in-out; }
   .popup:target {
     opacity: 1;
     visibility: visible; }
@@ -961,7 +1005,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%) scale(0.01);
     background: #fff;
-    transition: all .4s .3s ease-in-out; }
+    transition: transform .4s .3s ease-in-out; }
     @media only screen and (max-width: 56.25em) {
       .popup__content {
         height: 90vh; } }
