@@ -1,30 +1,30 @@
 @keyframes MoveInLeft {
   0% {
-    transform: translate(-10%, 0);
-    opacity: 0; }
+    opacity: 0;
+    transform: translateX(-10rem); }
   80% {
-    transform: translate(3%, 0); }
+    transform: translateX(1rem); }
   100% {
-    transform: translate(0);
-    opacity: 1; } }
+    opacity: 1;
+    transform: translate(0); } }
 
 @keyframes MoveInRight {
   0% {
-    transform: translate(10%, 0);
-    opacity: 0; }
+    opacity: 0;
+    transform: translateX(10rem); }
   80% {
-    transform: translate(-3%, 0); }
+    transform: translateX(-1rem); }
   100% {
-    transform: translate(0);
-    opacity: 1; } }
+    opacity: 1;
+    transform: translate(0); } }
 
 @keyframes MoveInbottom {
   0% {
-    transform: translate(0, 60%);
-    opacity: 0; }
+    opacity: 0;
+    transform: translateY(3rem); }
   100% {
-    transform: translate(0);
-    opacity: 1; } }
+    opacity: 1;
+    transform: translate(0); } }
 
 *,
 *::before,
@@ -201,8 +201,6 @@ body {
   position: absolute;
   border-radius: 4px;
   overflow: hidden;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
   box-shadow: 0 1.5rem 2.5rem rgba(0, 0, 0, 0.3);
   transition: all .3s; }
   .about__img--1 {
@@ -222,15 +220,14 @@ body {
         top: 9.5rem;
         left: 8rem; } }
   .about__img:hover {
-    outline: 1.5rem solid #55c57a;
     transform: translate(0, 0.3px) scale(1.1);
     box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.3);
-    z-index: 10;
-    padding: 2rem; }
+    z-index: 10; }
     @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
       .about__img:hover {
         outline-offset: 2rem;
-        padding: 0; } }
+        outline: 1.5rem solid #55c57a;
+        border: none; } }
 
 @media only screen and (max-width: 56.25em) {
   .about__img {
@@ -927,7 +924,7 @@ body {
   position: fixed;
   z-index: 100;
   transform: scale(1);
-  transition: all 0.5s ease-in-out; }
+  transition: all .8s; }
   @media only screen and (max-width: 56.25em) {
     .navigation__background {
       top: 4.5rem;
@@ -989,7 +986,8 @@ body {
     opacity: 1;
     visibility: visible; }
   .popup:target > .popup__content {
-    transform: translate(-50%, -50%) scale(1); }
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1; }
   @supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
     .popup {
       -webkit-backdrop-filter: blur(10px);
@@ -1004,8 +1002,9 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0.01);
+    opacity: 0;
     background: #fff;
-    transition: transform .4s .3s ease-in-out; }
+    transition: transform .4s .3s ease-in-out, opacity .4s .3s ease-in-out; }
     @media only screen and (max-width: 56.25em) {
       .popup__content {
         height: 90vh; } }

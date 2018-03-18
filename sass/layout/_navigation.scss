@@ -96,32 +96,7 @@
                 top: 6px;
             }
         }
-    }
-
-    //   &__icon {
-    //     position: relative;
-    //     margin-top: 3.5rem;
-
-    //     &,
-    //     &::before,
-    //     &::after {
-    //         width: 3rem;
-    //         height: 2px;
-    //         background-color: $color-grey-dark-3;
-    //         display: inline-block;
-    //     }
-
-    //     &::before,
-    //     &::after {
-    //         content: "";
-    //         position: absolute;
-    //         left: 0;
-    //         transition: all .2s;
-    //     }
-
-    //     &::before { top: -.8rem; }
-    //     &::after { top: .8rem; }
-    // }
+    } 
 
     &__background {
         height: 6rem;
@@ -133,8 +108,8 @@
         position: fixed;
         z-index: 100;
         transform: scale(1); 
-        transition: $point-five;
-
+        transition: all .8s;
+ 
         @include respond(tab) {
             top: 4.5rem;
             right: 4.5rem;
@@ -155,7 +130,7 @@
         opacity: 0;
         width: 100%;
         visibility: hidden;
-        transition: left .8s cubic-bezier(0.68, -0.55, 0.265, 1.55), 
+        transition: left .8s cubic-bezier(0.68, -0.55, 0.265, 1.55),
             opacity  .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         
     }
