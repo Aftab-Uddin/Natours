@@ -65,7 +65,7 @@
 }
 
 .button--animated {
-    animation: MoveInbottom .6s .6s;
+    animation: MoveInbottom .5s ease-out .75s;
     animation-fill-mode: backwards;
 }
 

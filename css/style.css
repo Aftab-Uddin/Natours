@@ -83,7 +83,7 @@ body {
     font-weight: 400;
     text-align: center;
     letter-spacing: 3.4rem;
-    animation: MoveInLeft 1.5s; }
+    animation: MoveInLeft 1s; }
     @media only screen and (max-width: 37.5em) {
       .heading-primary--main {
         letter-spacing: 1rem;
@@ -93,7 +93,7 @@ body {
     font-size: 2rem;
     font-weight: 700;
     letter-spacing: 1.7rem;
-    animation: MoveInRight 1.5s; }
+    animation: MoveInRight 1s; }
     @media only screen and (max-width: 37.5em) {
       .heading-primary--sub {
         letter-spacing: .2rem;
@@ -447,7 +447,7 @@ body {
     background: #55c57a; }
 
 .button--animated {
-  animation: MoveInbottom .6s .6s;
+  animation: MoveInbottom .5s ease-out .75s;
   animation-fill-mode: backwards; }
 
 .button__inline {
