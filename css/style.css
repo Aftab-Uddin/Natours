@@ -47,6 +47,15 @@ html {
   @media only screen and (min-width: 112.5em) {
     html {
       font-size: 75%; } }
+  @media only screen and (min-width: 156.25em) {
+    html {
+      font-size: 100%; } }
+  @media only screen and (min-width: 240em) {
+    html {
+      font-size: 125%; } }
+  @media only screen and (min-width: 480em) {
+    html {
+      font-size: 150%; } }
 
 body {
   box-sizing: border-box;
@@ -497,10 +506,7 @@ body {
         background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 60%, transparent 60%), url(../img/nat-10-3.jpg); } }
     @media only screen and (max-width: 56.25em) {
       .form__container {
-        background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 100%), url(../img/nat-10-330.jpg); } }
-    @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em), only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em) {
-      .form__container {
-        background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 100%), url(../img/nat-10-max.jpg); } }
+        background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 100%), url(../img/nat-10-500.jpg); } }
     @media only screen and (min-resolution: 192dpi) and (min-width: 56.25em), only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 56.25em), only screen and (min-width: 112.5em) {
       .form__container {
         background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 53%, transparent 53%), url(../img/nat-10-max.jpg); } }
@@ -853,7 +859,19 @@ body {
   transform: rotate(-135deg); }
 
 .navigation__input:checked ~ .navigation__background {
-  transform: scale(65); }
+  transform: scale(70); }
+  @media only screen and (min-width: 112.5em) {
+    .navigation__input:checked ~ .navigation__background {
+      transform: scale(80); } }
+  @media only screen and (min-width: 156.25em) {
+    .navigation__input:checked ~ .navigation__background {
+      transform: scale(90); } }
+  @media only screen and (min-width: 240em) {
+    .navigation__input:checked ~ .navigation__background {
+      transform: scale(120); } }
+  @media only screen and (min-width: 480em) {
+    .navigation__input:checked ~ .navigation__background {
+      transform: scale(150); } }
 
 .navigation__input:checked ~ .navigation__nav {
   left: 50%;
@@ -924,7 +942,7 @@ body {
   position: fixed;
   z-index: 100;
   transform: scale(1);
-  transition: all .8s; }
+  transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1); }
   @media only screen and (max-width: 56.25em) {
     .navigation__background {
       top: 4.5rem;
@@ -1041,10 +1059,13 @@ body {
     .popup__right > * {
       padding: 1rem 0;
       margin: 0; }
+    .popup__right > :last-child {
+      padding-bottom: -1rem; }
     @media only screen and (max-width: 56.25em) {
       .popup__right {
         width: 100%;
-        height: 60vh; } }
+        height: 60vh;
+        padding: 0 3.5rem; } }
   .popup__close {
     position: absolute;
     top: 5%;
@@ -1062,3 +1083,6 @@ body {
     @media only screen and (max-width: 56.25em) {
       .popup__text {
         column-count: auto; } }
+  @media only screen and (max-width: 56.25em) {
+    .popup__text-span {
+      display: none; } }

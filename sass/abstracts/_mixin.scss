@@ -25,4 +25,13 @@
     @if $break == big {
         @media only screen and (min-width: 112.5em) { @content;}
     }
+    @if $break == big-1 {
+        @media only screen and (min-width: 156.25em) { @content;}
+    }
+    @if $break == big-2 {
+        @media only screen and (min-width: 240em) { @content;}
+    }
+    @if $break == big-3 {
+        @media only screen and (min-width: 480em) { @content;}
+    }
 }

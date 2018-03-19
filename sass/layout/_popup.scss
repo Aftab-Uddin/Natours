@@ -88,10 +88,14 @@
             padding: 1rem 0;
             margin: 0;
         }
+        & > :last-child {
+            padding-bottom: -1rem;
+        }
  
         @include respond(tab) {    
             width: 100%;
             height: 60vh;
+            padding: 0 3.5rem;
         }
     }
 
@@ -117,6 +121,12 @@
     
         @include respond(tab) {     
             column-count: auto;
+        }
+    }
+    &__text-span {
+       
+        @include respond(tab) {     
+            display: none;
         }
     }
     

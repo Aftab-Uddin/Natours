@@ -19,7 +19,20 @@
         }
     } 
     &__input:checked ~ &__background{
-        transform: scale(65);
+        transform: scale(70);
+
+        @include respond(big) {       // 12px = 1rem
+            transform: scale(80);
+        }
+        @include respond(big-1) {       // 12px = 1rem
+            transform: scale(90);
+        }
+        @include respond(big-2) {       // 12px = 1rem
+            transform: scale(120);
+        }
+        @include respond(big-3) {       // 12px = 1rem
+            transform: scale(150);
+        }
     }
     &__input:checked ~ &__nav{  
         left: 50%;
@@ -108,7 +121,7 @@
         position: fixed;
         z-index: 100;
         transform: scale(1); 
-        transition: all .8s;
+        transition: all .8s cubic-bezier(0.86, 0, 0.07, 1);
  
         @include respond(tab) {
             top: 4.5rem;
