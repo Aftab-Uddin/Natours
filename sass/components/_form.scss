@@ -10,7 +10,7 @@
             background-image: linear-gradient(105deg, rgba($color-white,.8) 0%, rgba($color-white,.8) 60%, transparent 60%), url(../img/nat-10-3.jpg);
         }      
         @include respond (tab) {
-            background-image: linear-gradient(105deg,  rgba($color-white,.8) 0%, rgba($color-white,.8) 100%), url(../img/nat-10-500.jpg);            
+            background-image: linear-gradient(105deg,  rgba($color-white,.8) 0%, rgba($color-white,.8) 100%), url(../img/nat-10-900.jpg);            
         }
         
         @media only screen and (min-resolution: 192dpi) and (min-width: 56.25em),
@@ -18,10 +18,8 @@
             only screen and (min-width: 112.5em) {
                 background-image: linear-gradient(105deg,  rgba($color-white,.8) 0%, rgba($color-white,.8) 53%, transparent 53%), url(../img/nat-10-max.jpg);
         }
-        
- 
-        
-    } 
+             
+    }  
 
     width: 50%;
     padding: 6rem;
