@@ -120,7 +120,7 @@
         column-rule: 1px solid $color-grey-dark-2;
     
         @include respond(tab) {     
-            column-count: auto;
+            column-gap: 3rem;
         }
     }
     &__text-span {

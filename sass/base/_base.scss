@@ -15,9 +15,9 @@ html {
     @include respond(tab) {       // 8px = 1rem
         font-size: 50%;
     }
-    @include respond(phone) {     // 7px = 1rem
-        font-size: 44%;
-    }
+    // @include respond(phone) {     // 7px = 1rem
+    //     font-size: 44%;
+    // }
     @include respond(big) {       // 12px = 1rem
         font-size: 75%;
     }
