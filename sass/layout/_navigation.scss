@@ -53,7 +53,7 @@
         z-index: 300;
         cursor: pointer;
 
-        @include respond(tab) {
+        @include respond(tab) { 
             top: 4rem;
             right: 4rem;
         }
@@ -121,7 +121,7 @@
         position: fixed;
         z-index: 100;
         transform: scale(1); 
-        transition: all .8s cubic-bezier(0.86, 0, 0.07, 1);
+        transition: transform .8s cubic-bezier(0.86, 0, 0.07, 1);
  
         @include respond(tab) {
             top: 4.5rem;
@@ -144,10 +144,11 @@
         width: 100%;
         visibility: hidden;
         transition: left .8s cubic-bezier(0.68, -0.55, 0.265, 1.55),
-            opacity  .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            opacity  .8s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+            visibility  .4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         
     }
- 
+  
     &__nav-list {
         list-style: none; 
         
@@ -167,7 +168,9 @@
         color: $color-white;
         background-image: linear-gradient(118deg, transparent 0%, transparent 50%, $color-white 50%);
         background-size: 222%;
-        transition: $point-three;
+        transition: transform .3s ease-in-out,
+                    color .3s ease-in-out,
+                    background-position .3s ease-in-out;
         
         &:hover {
             transform: translate(1.5rem, 0);
